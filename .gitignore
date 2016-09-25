@@ -3,3 +3,7 @@ target/
 .idea/
 .DS_STORE
 log/
+.lein-env
+.nrepl-port
+out
+*.js
