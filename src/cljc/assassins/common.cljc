@@ -1,7 +1,8 @@
 (ns assassins.common)
 
-(defn shared-fn
-  "A function that is shared between clj and cljs"
-  []
-  (println "cljc!"))
+(defn rotate [n coll]
+  (take (count coll) (drop 1 (cycle coll))))
+
+(defn circ-pairs [coll]
+  (zipmap coll (rotate 1 coll)))
 

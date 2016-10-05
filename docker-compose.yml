@@ -1,0 +1,10 @@
+version: '2'
+services:
+  datomic:
+   build: ./docker/datomic
+   environment:
+     DATOMIC_LICENSE_KEY: ${DATOMIC_LICENSE_KEY}
+     DATOMIC_BIND_IP: ${NETWORK_PUBLISH_HOST}
+   ports:
+     - "4334:4334"
+     - "4335:4335"

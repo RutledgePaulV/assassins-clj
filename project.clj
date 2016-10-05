@@ -1,4 +1,8 @@
 (defproject assassins "0.1.0-SNAPSHOT"
+  :repositories {"datomic" {:url      "https://my.datomic.com/repo"
+                            :username :env/DATOMIC_USERNAME
+                            :password :env/DATOMIC_PASSWORD}}
+
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.89" :scope "provided"]
                  [com.cognitect/transit-clj "0.8.288"]
@@ -8,7 +12,9 @@
                  [ring-logger-timbre "0.7.5"]
                  [compojure "1.5.1"]
                  [environ "1.1.0"]
-                 [reagent "0.6.0"]]
+                 [reagent "0.6.0"]
+                 [secretary "1.2.3"]
+                 [com.datomic/datomic-pro "0.9.5404"]]
 
   :aot :all
   :plugins [[lein-cljsbuild "1.1.3"] [lein-environ "1.0.3"]]
